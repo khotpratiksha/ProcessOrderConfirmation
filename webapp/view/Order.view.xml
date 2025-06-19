@@ -1,0 +1,16 @@
+<mvc:View
+    controllerName="com.demo.processorder.controller.Order"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Process Order Selection" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Input id="orderInput" placeholder="Enter Process Order" liveChange="onInputChange"/>
+                <Toolbar>
+                    <ToolbarSpacer/>
+                    <Button text="Continue" press="onContinue" enabled="{order>/valid}"/>
+                </Toolbar>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,37 @@
+<mvc:View
+    controllerName="com.demo.processorder.controller.Confirm"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Confirmation" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <VBox class="sapUiSmallMargin" binding="{/order}">
+                <Text text="Order: {/orderNo}"/>
+                <Text text="Material: {/material}"/>
+                <Text text="Remaining: {/remaining}"/>
+                <Input value="{quantity}" type="Number" placeholder="Confirm Quantity"/>
+                <Input value="{sample}" type="Number" placeholder="Sample Quantity"/>
+                <CheckBox selected="{final}" text="Final Receipt"/>
+            </VBox>
+            <Table id="timeTable" items="{time>/}" visible="{timeVisible}">
+                <columns>
+                    <Column><Text text="Phase"/></Column>
+                    <Column><Text text="Hours"/></Column>
+                    <Column><Text text="Crew"/></Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{time>phase}"/>
+                            <Input value="{time>hours}" type="Number"/>
+                            <Input value="{time>crew}" type="Number"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Post" press="onPost"/>
+            </Toolbar>
+        </content>
+    </Page>
+</mvc:View>

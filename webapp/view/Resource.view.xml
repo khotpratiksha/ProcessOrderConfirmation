@@ -1,0 +1,18 @@
+<mvc:View
+    controllerName="com.demo.processorder.controller.Resource"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App id="app">
+        <Page title="Resource Selection">
+            <content>
+                <VBox class="sapUiSmallMargin">
+                    <Input id="resourceInput" placeholder="Enter Resource" liveChange="onInputChange"/>
+                    <Toolbar>
+                        <ToolbarSpacer/>
+                        <Button text="Continue" press="onContinue" enabled="{resource>/valid}"/>
+                    </Toolbar>
+                </VBox>
+            </content>
+        </Page>
+    </App>
+</mvc:View>
